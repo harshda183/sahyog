@@ -10,7 +10,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
-app.use(cors({ origin: ["http://localhost:5173", "http://127.0.0.1:5173"] }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://poetic-heliotrope-8ad878.netlify.app"
+  ]
+}));
 app.use(express.json());
 
 // MongoDB collections (Mongoose models)
